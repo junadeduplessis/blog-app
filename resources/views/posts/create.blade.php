@@ -27,7 +27,7 @@
                             <label class="label">Content: </label>
                             <textarea name="content" rows="10" cols="30" class="form-control" required></textarea>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pt-3">
                             <input type="submit" class="btn btn-success" />
                         </div>
                     </form>

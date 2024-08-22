@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <h1>Manage Posts</h1>
-            <a href="{{ route('posts.create') }}" class="btn btn-success" style="float: right">Create Post</a>
+            <a href="{{ route('posts.create') }}" class="btn btn-success mb-3" style="float: right">Create Post</a>
             <table class="table table-bordered">
                 <thead>
                     <th width="80px">Id</th>

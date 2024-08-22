@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Like;
+use App\Models\Post;
 
 class LikeController extends Controller
 {
-    public function like(Like $like)
+    public function like(Post $post)
     {
-        $liker = auth()->user();
+        $userLike = auth()->user();
 
-        $liker->likes()->attach($like->id);
+        $userLike->likes()->attach($post->id);
 
-        return redirect()->route('posts.index')->with('success', 'post is liked!');
+        return redirect()->route('posts.show', $post->id)->with('success', 'post is liked!');
     }
 }
