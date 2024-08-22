@@ -25,8 +25,9 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts', PostController::class);
     Route::resource('comments', CommentController::class);
-    Route::get('/get-comments/{id}', [CommentController::class, 'getComments'])->name('get-commments');
+    Route::get('/get-comments/{id}', [CommentController::class, 'getComments'])->name('get.commments');
     Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('post.like');
+    Route::get('/likes/{id}', [LikeController::class, 'getLikes'])->name('get.likes');
 });
 
 

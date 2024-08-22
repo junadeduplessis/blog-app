@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Like;
 
 class LikeController extends Controller
 {
@@ -13,6 +14,18 @@ class LikeController extends Controller
 
         $userLike->likes()->attach($post->id);
 
-        return redirect()->route('posts.show', $post->id)->with('success', 'post is liked!');
+        $response = array(
+            'status' => 'success',
+            'msg' => 'Post liked successfully',
+        );
+
+        return response()->json([$response]);
+    }
+
+    public function getLikes($id)
+    {
+        $likes = Like::where('post_id', $id)->count();
+
+        return response()->json(['likes' => $likes]);
     }
 }
